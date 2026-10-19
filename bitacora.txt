@@ -1,0 +1,19 @@
+=== BITÁCORA DEL PROYECTO: RUEDA LIBRE ===
+
+1. Análisis de petición HTTP (Live Server - DevTools Network):
+- URL completa: http://127.0.0.1:5500/index.html (o http://localhost:5500/index.html)
+- Protocolo: HTTP
+- Host: 127.0.0.1 (o localhost)
+- Puerto: 5500
+- Ruta (Path): /index.html
+- Método de la petición: GET
+- Código de estado: 200 OK (Indica que la solicitud fue procesada con éxito y el servidor entregó el documento correctamente).
+
+2. Prueba de ruta inexistente (/promociones.html):
+- Código de estado del servidor: 404 Not Found
+- Significado: El servidor indica que el recurso o archivo solicitado no existe en la ruta especificada.
+
+3. Roles de HTML, CSS y JavaScript en Rueda Libre:
+- HTML (Estructura y Contenido): Es el esqueleto de la página. Define los elementos principales como el título principal (H1), los párrafos de bienvenida y la integración de las imágenes.
+- CSS (Estilos y Diseño): Se encarga de la capa visual y de presentación. Permite definir los colores institucionales, tipografías, diseño adaptable (responsive) para celulares y la distribución de las secciones.
+- JavaScript (Interactividad y Lógica): Aporta dinamismo al sitio. Permite programar funcionalidades como un formulario interactivo para calcular el costo de alquiler por horas o un mapa interactivo de rutas recomendadas en Medellín.
