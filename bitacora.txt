@@ -41,3 +41,45 @@ paginas/reservas.html    -> paginas/tarifas.html     -> tarifas.html
 paginas/reservas.html    -> paginas/reservas.html    -> reservas.html
 index.html               -> img/logo.jpeg            -> img/logo.jpeg
 paginas/tarifas.html     -> img/logo.jpeg            -> ../img/logo.jpeg
+
+==================================================
+BITÁCORA DE PRUEBAS Y DECISIONES - RUEDA LIBRE v0.2
+==================================================
+
+1. ESQUEMA DE REGIONES SEMÁNTICAS (ESTRUCTURA DE DÍA 2)
+--------------------------------------------------
++-----------------------------------------------------------------------+
+| HEADER (<header>)                                                     |
+|  ├── Título / Logo (h1 / img)                                         |
+|  └── NAVEGACIÓN PRINCIPAL (<nav>)                                     |
+|       └── Lista de enlaces (ul > li > a)                              |
++-----------------------------------------------------------------------+
+| CONTENIDO PRINCIPAL (<main>) [Único por página]                      |
+|                                                                       |
+|  [index.html]                                                         |
+|  ├── SECTION: ¿Quiénes somos? (h2, p, img)                            |
+|  ├── SECTION: Nuestros servicios (h2)                                 |
+|  │    ├── ARTICLE: Alquiler de bicicletas (h3, p, img)                |
+|  │    ├── ARTICLE: Recorridos guiados (h3, p, img)                    |
+|  │    └── ARTICLE: Taller básico (h3, p)                              |
+|  ├── SECTION: ¿Cómo alquilar? (h2, ol, h3, ul)                        |
+|  └── SECTION: Encuéntranos (h2, p, a)                                 |
+|                                                                       |
+|  [tarifas.html]                                                       |
+|  ├── SECTION: Tarifas de alquiler (h2, table)                         |
+|  ├── SECTION: Recorridos guiados (h2, table, a)                       |
+|  └── ASIDE: Información importante y qué llevar (h2, h3, p, ul)       |
+|                                                                       |
+|  [reservas.html]                                                      |
+|  ├── SECTION: Contacto para reservas (h2, p)                          |
+|  └── ASIDE: Horarios de atención (h2, dl)                             |
++-----------------------------------------------------------------------+
+| PIE DE PÁGINA (<footer>)                                              |
+|  └── Información legal, correo y copyright                            |
++-----------------------------------------------------------------------+
+
+2. JUSTIFICACIÓN DE USO DE ETIQUETAS Y ELIMINACIÓN DE DIVS
+--------------------------------------------------
+- Se eliminaron todos los contenedores <div> del sitio.
+- Los tres servicios en index.html se convirtieron en <article> porque representan unidades de contenido autónomas e independientes que tienen sentido por sí mismas.
+- Las secciones de "Información importante" en tarifas.html y "Horarios de atención" en reservas.html se definieron como <aside> porque representan contenido complementario/secundario relacionado al tema principal.
