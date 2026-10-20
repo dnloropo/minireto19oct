@@ -34,23 +34,23 @@
                     <legend>Tus datos</legend>
 
                     <p>
-                        <label for="nombre">Nombre completo:</label><br>
-                        <input type="text" id="nombre" name="nombre_completo">
+                        <label for="nombre">Nombre completo:*</label><br>
+                        <input type="text" id="nombre" name="nombre_completo" required minlength="3">
                     </p>
 
                     <p>
-                        <label for="documento">Número de documento:</label><br>
-                        <input type="text" id="documento" name="numero_documento">
+                        <label for="documento">Número de documento:*</label><br>
+                        <input type="text" id="documento" name="numero_documento" required pattern="[0-9]{6,10}" title="El documento debe contener solo números, entre 6 y 10 dígitos.">
                     </p>
 
                     <p>
-                        <label for="correo">Correo electrónico:</label><br>
-                        <input type="email" id="correo" name="email">
+                        <label for="correo">Correo electrónico:*</label><br>
+                        <input type="email" id="correo" name="email" required>
                     </p>
 
                     <p>
-                        <label for="celular">Celular / WhatsApp:</label><br>
-                        <input type="tel" id="celular" name="telefono">
+                        <label for="celular">Celular / WhatsApp:*</label><br>
+                        <input type="tel" id="celular" name="telefono" required pattern="3[0-9]{9}" title="El celular debe tener exactamente 10 dígitos y comenzar por el número 3 (Ej: 3001234567).">
                     </p>
                 </fieldset>
 
@@ -59,13 +59,13 @@
                     <legend>Tu alquiler</legend>
 
                     <p>
-                        <label for="fecha">Fecha del alquiler:</label><br>
-                        <input type="date" id="fecha" name="fecha_alquiler">
+                        <label for="fecha">Fecha del alquiler:*</label><br>
+                        <input type="date" id="fecha" name="fecha_alquiler" required min="2026-11-01" max="2026-12-31">
                     </p>
 
                     <p>
-                        <strong>Tipo de bicicleta:</strong><br>
-                        <input type="radio" id="bici_urbana" name="tipo_bicicleta" value="urbana">
+                        <strong>Tipo de bicicleta:*</strong><br>
+                        <input type="radio" id="bici_urbana" name="tipo_bicicleta" value="urbana" required>
                         <label for="bici_urbana">Urbana</label><br>
 
                         <input type="radio" id="bici_montana" name="tipo_bicicleta" value="montana">
@@ -76,8 +76,8 @@
                     </p>
 
                     <p>
-                        <label for="plan">Plan de alquiler:</label><br>
-                        <select id="plan" name="plan_alquiler">
+                        <label for="plan">Plan de alquiler:*</label><br>
+                        <select id="plan" name="plan_alquiler" required>
                             <option value="">-- Selecciona un plan --</option>
                             <option value="1_hora">1 hora</option>
                             <option value="medio_dia">Medio día (4 h)</option>
@@ -86,8 +86,8 @@
                     </p>
 
                     <p>
-                        <label for="cantidad">Cantidad de bicicletas:</label><br>
-                        <input type="number" id="cantidad" name="cantidad_bicicletas" value="1">
+                        <label for="cantidad">Cantidad de bicicletas:*</label><br>
+                        <input type="number" id="cantidad" name="cantidad_bicicletas" value="1" required min="1" max="6">
                     </p>
 
                     <p>
@@ -101,8 +101,8 @@
                     </p>
 
                     <p>
-                        <label for="comentarios">Comentarios o solicitudes especiales:</label><br>
-                        <textarea id="comentarios" name="comentarios_adicionales" rows="4" cols="40"></textarea>
+                        <label for="comentarios">Comentarios o solicitudes especiales (opcional, máx. 300 caracteres):</label><br>
+                        <textarea id="comentarios" name="comentarios_adicionales" rows="4" cols="40" maxlength="300"></textarea>
                     </p>
                 </fieldset>
 
@@ -111,8 +111,8 @@
                     <legend>Confirmación</legend>
 
                     <p>
-                        <input type="checkbox" id="politicas" name="acepta_politicas" value="si">
-                        <label for="politicas">Acepto las políticas de alquiler y términos del servicio</label>
+                        <input type="checkbox" id="politicas" name="acepta_politicas" value="si" required>
+                        <label for="politicas">Acepto las políticas de alquiler y términos del servicio*</label>
                     </p>
 
                     <p>

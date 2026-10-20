@@ -96,3 +96,20 @@ JUSTIFICACIÓN DE CONTROLES - FORMULARIO DE RESERVAS (MINIRETO 6)
 
 3. Aceptación de políticas (Casilla de verificación / checkbox):
    Se eligió <input type="checkbox"> porque representa una confirmación binaria e independiente (aceptar o no aceptar los términos y condiciones de alquiler).
+
+   ==================================================
+TABLA DE PRUEBAS DE VALIDACIÓN NATIVA (MINIRETO 7)
+==================================================
+
+| Campo              | Dato de prueba    | Resultado esperado                              | Resultado obtenido                             | Estado  |
+|--------------------|-------------------|--------------------------------------------------|------------------------------------------------|---------|
+| Nombre completo    | "Ed"              | Rechazar por minlength="3"                       | El navegador muestra mensaje de longitud corta | Exitoso |
+| Documento          | "123ABC"          | Rechazar por pattern="[0-9]{6,10}"               | El navegador indica coincidencia de patrón     | Exitoso |
+| Documento          | "12345"           | Rechazar por no tener mínimo 6 dígitos           | El navegador solicita ajustar el formato       | Exitoso |
+| Correo             | "correoSinArroba" | Rechazar por formato de email inválido           | El navegador exige un carácter "@"             | Exitoso |
+| Celular            | "1234567890"      | Rechazar por no empezar por 3 (pattern="3[0-9]{9}") | Muestra el title explicativo configurado      | Exitoso |
+| Celular            | "300123"          | Rechazar por no tener exactamente 10 dígitos    | Muestra mensaje del title explicativo          | Exitoso |
+| Fecha del alquiler | "2026-10-25"      | Rechazar por estar antes del min="2026-11-01"    | Muestra que la fecha debe ser el 01/11/2026    | Exitoso |
+| Cantidad           | "10"              | Rechazar por superar el max="6"                  | Muestra que el valor debe ser menor o igual a 6| Exitoso |
+| Comentarios        | 350 caracteres    | Impedir escritura pasados los 300 caracteres     | Se detiene la escritura a los 300 caracteres   | Exitoso |
+| Políticas          | Sin marcar        | Impedir envío por atributo required              | El navegador exige marcar la casilla           | Exitoso |
