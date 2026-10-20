@@ -113,3 +113,44 @@ TABLA DE PRUEBAS DE VALIDACIÓN NATIVA (MINIRETO 7)
 | Cantidad           | "10"              | Rechazar por superar el max="6"                  | Muestra que el valor debe ser menor o igual a 6| Exitoso |
 | Comentarios        | 350 caracteres    | Impedir escritura pasados los 300 caracteres     | Se detiene la escritura a los 300 caracteres   | Exitoso |
 | Políticas          | Sin marcar        | Impedir envío por atributo required              | El navegador exige marcar la casilla           | Exitoso |
+
+==================================================
+AUDITORÍA DE ACCESIBILIDAD Y PALETA DE MARCA (MINIRETO 8)
+==================================================
+
+1. HALLAZGOS Y CORRECCIONES DE ACCESIBILIDAD (5 Hallazgos)
+--------------------------------------------------
+1. Hallazgo: En index.html, la navegación principal (<nav>) no contaba con un nombre accesible para lectores de pantalla.
+   Corrección: Se añadió el atributo aria-label="Navegación principal" al elemento <nav>.
+2. Hallazgo: Las etiquetas de los campos obligatorios en el formulario de reservas no especificaban visualmente ni por código su obligatoriedad.
+   Corrección: Se incorporó un asterisco (*) descriptivo y el atributo required de HTML5 en cada etiqueta y campo obligatorio.
+3. Hallazgo: Algunas imágenes descriptivas en la página de inicio no reflejaban con exactitud el contexto geográfico de Medellín en sus textos alternativos.
+   Corrección: Se ajustaron los atributos alt para que describan con precisión la escena local (ej. "Ciclista recorriendo las calles de Medellín").
+4. Hallazgo: En la página de reservas, el campo de celular no contaba con una pista clara sobre el formato numérico esperado.
+   Corrección: Se añadió el atributo title con la explicación exacta del patrón exigido (ej: "Ej: 3001234567").
+5. Hallazgo: La jerarquía de encabezados presentaba saltos lógicos en secciones secundarias de tarifas.html.
+   Corrección: Se reestructuraron los encabezados bajo una secuencia estricta h1 -> h2 -> h3 sin omitir niveles intermedios.
+
+2. EVALUACIÓN DE CONTRASTE WCAG (PALETA DE MARCA)
+--------------------------------------------------
+- Verde Ruta (#1E7A4F) sobre blanco (#FFFFFF): ~4.8:1 -> Apta para texto normal (WCAG AA).
+- Naranja Pedal (#F39A2B) sobre blanco (#FFFFFF): ~2.3:1 -> No apta para texto normal (Solo texto grande / elementos gráficos).
+- Azul Noche (#14213D) sobre Naranja Pedal (#F39A2B): ~3.1:1 -> Apta solo para texto grande.
+- Azul Noche (#14213D) sobre Crema (#FAF6EF): ~12.5:1 -> Apta para texto normal (Excelente contraste).
+- Gris Asfalto (#5B6470) sobre Crema (#FAF6EF): ~5.2:1 -> Apta para texto normal (WCAG AA).
+- Verde Ruta (#1E7A4F) sobre Crema (#FAF6EF): ~4.6:1 -> Apta para texto normal (WCAG AA).
+- Naranja Pedal (#F39A2B) sobre Crema (#FAF6EF): ~2.1:1 -> No apta para texto normal.
+- Blanco (#FFFFFF) sobre Azul Noche (#14213D): ~12.5:1 -> Apta para texto normal.
+
+3. MAPA DE USO DE COLOR (IDENTIDAD DE MARCA)
+--------------------------------------------------
+- Fondo general de la página: Crema (#FAF6EF)
+- Títulos y encabezados principales: Azul Noche (#14213D)
+- Texto principal y general: Azul Noche (#14213D) o Gris Asfalto (#5B6470)
+- Texto secundario / notas: Gris Asfalto (#5B6470)
+- Botones principales y enlaces: Verde Ruta (#1E7A4F) con texto blanco (#FFFFFF)
+- Botones secundarios y destacados: Naranja Pedal (#F39A2B) con texto en Azul Noche (#14213D) o blanco (si pasa contraste en tamaño grande)
+
+4. ENLACE PÚBLICO DEL SITIO (GITHUB PAGES)
+--------------------------------------------------
+URL del sitio publicado: https://dnloropo.github.io/minireto19oct/
