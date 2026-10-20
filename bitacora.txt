@@ -83,3 +83,16 @@ BITÁCORA DE PRUEBAS Y DECISIONES - RUEDA LIBRE v0.2
 - Se eliminaron todos los contenedores <div> del sitio.
 - Los tres servicios en index.html se convirtieron en <article> porque representan unidades de contenido autónomas e independientes que tienen sentido por sí mismas.
 - Las secciones de "Información importante" en tarifas.html y "Horarios de atención" en reservas.html se definieron como <aside> porque representan contenido complementario/secundario relacionado al tema principal.
+
+==================================================
+JUSTIFICACIÓN DE CONTROLES - FORMULARIO DE RESERVAS (MINIRETO 6)
+==================================================
+
+1. Tipo de bicicleta (Botones de opción / radio):
+   Se eligió <input type="radio"> porque el cliente debe seleccionar una única opción entre categorías mutuamente excluyentes (urbana, montaña o eléctrica).
+
+2. Recorrido guiado (Lista desplegable / select):
+   Se eligió <select> con <option> porque es una lista de opciones predefinidas ("Ninguno", "Río y Parques", "Sabores de Barrio", "Reto Las Palmas") que optimiza el espacio en pantalla y evita errores de digitación.
+
+3. Aceptación de políticas (Casilla de verificación / checkbox):
+   Se eligió <input type="checkbox"> porque representa una confirmación binaria e independiente (aceptar o no aceptar los términos y condiciones de alquiler).

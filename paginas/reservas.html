@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reserva tu bicicleta o recorrido guiado en Rueda Libre Medellín. Conoce nuestros horarios de atención y datos de contacto.">
+    <meta name="description" content="Reserva tu bicicleta o recorrido guiado en Rueda Libre Medellín. Conoce nuestros horarios de atención y completa tu solicitud.">
     <title>Reservas | Rueda Libre</title>
 </head>
 <body>
@@ -23,9 +23,104 @@
     <main>
         <h1>Reserva tu bicicleta</h1>
 
+        <!-- Sección: Formulario de Reserva -->
         <section>
-            <h2>Contacto para reservas</h2>
-            <p>Por ahora, realiza tu reserva enviándonos un correo electrónico a: <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+            <h2>Formulario de reserva</h2>
+            
+            <form action="https://httpbin.org/post" method="post">
+                
+                <!-- Grupo 1: Tus datos -->
+                <fieldset>
+                    <legend>Tus datos</legend>
+
+                    <p>
+                        <label for="nombre">Nombre completo:</label><br>
+                        <input type="text" id="nombre" name="nombre_completo">
+                    </p>
+
+                    <p>
+                        <label for="documento">Número de documento:</label><br>
+                        <input type="text" id="documento" name="numero_documento">
+                    </p>
+
+                    <p>
+                        <label for="correo">Correo electrónico:</label><br>
+                        <input type="email" id="correo" name="email">
+                    </p>
+
+                    <p>
+                        <label for="celular">Celular / WhatsApp:</label><br>
+                        <input type="tel" id="celular" name="telefono">
+                    </p>
+                </fieldset>
+
+                <!-- Grupo 2: Tu alquiler -->
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+
+                    <p>
+                        <label for="fecha">Fecha del alquiler:</label><br>
+                        <input type="date" id="fecha" name="fecha_alquiler">
+                    </p>
+
+                    <p>
+                        <strong>Tipo de bicicleta:</strong><br>
+                        <input type="radio" id="bici_urbana" name="tipo_bicicleta" value="urbana">
+                        <label for="bici_urbana">Urbana</label><br>
+
+                        <input type="radio" id="bici_montana" name="tipo_bicicleta" value="montana">
+                        <label for="bici_montana">Montaña</label><br>
+
+                        <input type="radio" id="bici_electrica" name="tipo_bicicleta" value="electrica">
+                        <label for="bici_electrica">Eléctrica</label>
+                    </p>
+
+                    <p>
+                        <label for="plan">Plan de alquiler:</label><br>
+                        <select id="plan" name="plan_alquiler">
+                            <option value="">-- Selecciona un plan --</option>
+                            <option value="1_hora">1 hora</option>
+                            <option value="medio_dia">Medio día (4 h)</option>
+                            <option value="dia_completo">Día completo</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="cantidad">Cantidad de bicicletas:</label><br>
+                        <input type="number" id="cantidad" name="cantidad_bicicletas" value="1">
+                    </p>
+
+                    <p>
+                        <label for="recorrido">Recorrido guiado (opcional):</label><br>
+                        <select id="recorrido" name="recorrido_guiado">
+                            <option value="ninguno">Ninguno</option>
+                            <option value="rio_parques">Río y Parques (12 km)</option>
+                            <option value="sabores_barrio">Sabores de Barrio (18 km)</option>
+                            <option value="reto_palmas">Reto Las Palmas (25 km)</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="comentarios">Comentarios o solicitudes especiales:</label><br>
+                        <textarea id="comentarios" name="comentarios_adicionales" rows="4" cols="40"></textarea>
+                    </p>
+                </fieldset>
+
+                <!-- Grupo 3: Confirmación -->
+                <fieldset>
+                    <legend>Confirmación</legend>
+
+                    <p>
+                        <input type="checkbox" id="politicas" name="acepta_politicas" value="si">
+                        <label for="politicas">Acepto las políticas de alquiler y términos del servicio</label>
+                    </p>
+
+                    <p>
+                        <button type="submit">Enviar reserva</button>
+                    </p>
+                </fieldset>
+
+            </form>
         </section>
 
         <!-- Contenido Complementario (<aside>) -->
