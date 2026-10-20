@@ -1,19 +1,43 @@
-=== BITÁCORA DEL PROYECTO: RUEDA LIBRE ===
+==================================================
+BITÁCORA DE PRUEBAS Y DECISIONES - RUEDA LIBRE v0.1
+==================================================
 
-1. Análisis de petición HTTP (Live Server - DevTools Network):
-- URL completa: http://127.0.0.1:5500/index.html (o http://localhost:5500/index.html)
+1. ANÁLISIS DE PETICIÓN AL SERVIDOR (LIVE SERVER / DEVTOOLS)
+--------------------------------------------------
+- URL completa: http://127.0.0.1:5500/index.html
 - Protocolo: HTTP
-- Host: 127.0.0.1 (o localhost)
+- Host: 127.0.0.1
 - Puerto: 5500
-- Ruta (Path): /index.html
-- Método de la petición: GET
-- Código de estado: 200 OK (Indica que la solicitud fue procesada con éxito y el servidor entregó el documento correctamente).
+- Ruta: /index.html
+- Método de petición: GET
+- Código de estado: 200 OK
 
-2. Prueba de ruta inexistente (/promociones.html):
-- Código de estado del servidor: 404 Not Found
-- Significado: El servidor indica que el recurso o archivo solicitado no existe en la ruta especificada.
+Prueba de ruta inexistente:
+- URL probada: http://127.0.0.1:5500/promociones.html
+- Código de respuesta: 404 Not Found
+- Significado: El servidor no pudo encontrar el recurso solicitado en la ruta especificada.
 
-3. Roles de HTML, CSS y JavaScript en Rueda Libre:
-- HTML (Estructura y Contenido): Es el esqueleto de la página. Define los elementos principales como el título principal (H1), los párrafos de bienvenida y la integración de las imágenes.
-- CSS (Estilos y Diseño): Se encarga de la capa visual y de presentación. Permite definir los colores institucionales, tipografías, diseño adaptable (responsive) para celulares y la distribución de las secciones.
-- JavaScript (Interactividad y Lógica): Aporta dinamismo al sitio. Permite programar funcionalidades como un formulario interactivo para calcular el costo de alquiler por horas o un mapa interactivo de rutas recomendadas en Medellín.
+2. ROLES DE HTML, CSS Y JAVASCRIPT EN RUEDA LIBRE
+--------------------------------------------------
+- HTML (Lenguaje de marcado): Define la estructura y el contenido semántico del sitio web (encabezados, párrafos, tablas, imágenes, listas y enlaces).
+  Ejemplo: <h1>Rueda Libre</h1>
+- CSS (Hojas de estilo en cascada): Controla la presentación visual, colores, tipografía, diseño adaptativo y disposición de los elementos.
+  Ejemplo: header { background-color: # green; color: white; }
+- JavaScript (Lenguaje de programación): Aporta interactividad dinámica y lógica en el lado del cliente (validación de formularios, filtros interactivos).
+  Ejemplo: Evento para calcular automáticamente la tarifa total según las horas seleccionadas.
+
+3. TABLA DE RUTAS RELATIVAS (SITIO NAVEGABLE v0.1)
+--------------------------------------------------
+Archivo de Origen        -> Archivo Destino          -> Ruta Escrita
+----------------------------------------------------------------------------------
+index.html               -> index.html               -> index.html
+index.html               -> paginas/tarifas.html     -> paginas/tarifas.html
+index.html               -> paginas/reservas.html    -> paginas/reservas.html
+paginas/tarifas.html     -> index.html               -> ../index.html
+paginas/tarifas.html     -> paginas/tarifas.html     -> tarifas.html
+paginas/tarifas.html     -> paginas/reservas.html    -> reservas.html
+paginas/reservas.html    -> index.html               -> ../index.html
+paginas/reservas.html    -> paginas/tarifas.html     -> tarifas.html
+paginas/reservas.html    -> paginas/reservas.html    -> reservas.html
+index.html               -> img/logo.jpeg            -> img/logo.jpeg
+paginas/tarifas.html     -> img/logo.jpeg            -> ../img/logo.jpeg
